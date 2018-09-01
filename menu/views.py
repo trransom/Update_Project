@@ -8,7 +8,7 @@ from .models import *
 from .forms import *
 
 def menu_list(request):
-    all_menus = Menu.objects.distinct()
+    all_menus = Menu.objects.all().distinct()
     menus = []
     for menu in all_menus:
         if menu.expiration_date != None:
@@ -18,12 +18,12 @@ def menu_list(request):
     return render(request, 'menu/list_all_current_menus.html', {'menus': menus})
 
 def menu_detail(request, pk):
-    menu = Menu.objects.get(pk=pk)
+    menu = Menu.objects.distinct().get(pk=pk)
     return render(request, 'menu/menu_detail.html', {'menu': menu})
 
 def item_detail(request, pk):
     try: 
-        item = Item.objects.get(pk=pk)
+        item = Item.objects.distinct().get(pk=pk)
     except ObjectDoesNotExist:
         raise Http404
     return render(request, 'menu/detail_item.html', {'item': item})
