@@ -9,3 +9,13 @@ class MenuForm(forms.ModelForm):
         model = Menu
         fields = ['season', 'items', 'expiration_date']
         exclude = ['created_date',]
+        
+    def clean(self):
+        data = self.cleaned_data
+        items = data.get('items')
+        
+        if not items:
+            raise forms.ValidationError(
+                'A menu must have at least one item.'
+            )
+        return data
