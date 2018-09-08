@@ -6,3 +6,5 @@ from .forms import MenuForm
 
 
 
+class MenuViewsTest(TestCase):
+
