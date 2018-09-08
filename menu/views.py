@@ -46,7 +46,7 @@ def edit_menu(request, pk):
     if request.method == "POST":
         menu.season = request.POST.get('season', '')
         menu.expiration_date = datetime.strptime(request.POST.get('expiration_date', ''), '%m/%d/%Y')
-        menu.items = request.POST.get('items', '')
+#        menu.items = request.POST.get('items', '')
         menu.save()
 
     return render(request, 'menu/change_menu.html', {
