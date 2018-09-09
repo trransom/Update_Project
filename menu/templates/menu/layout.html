@@ -5,14 +5,25 @@
         <title>Soda Fountain</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/global.css"> 
     </head>
     <body>
-        <div class="page-header">
+	<header>
+		<div class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'menu_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-            <h1>{% block title %}<a href="/">Soda Fountain{% endblock %}</a></h1>
+            <h1>{% block title %}<a href="/"><img src="/static/images/logo.png">{% endblock %}</a></h1>
         </div>
-    {% block content %}{% endblock %}
+	</header>
+	<section>
+		<div class="picture">
+			<img src="/static/images/soda-983293_1280.jpg" />
+		</div>
+		{% block content %}{% endblock %}
+	<section>
+	</section>
+	<footer>
+	</footer>
     </body>
 </html>
