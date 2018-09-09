@@ -6,11 +6,14 @@
 body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
+	background: #e4e3e1;
 }
 
 h1 {
 	text-align: center;
 	font-size: 28px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 h2 {
@@ -25,7 +28,13 @@ h3 {
 
 a:hover {
 	color: darkblue;
+	text-decoration: none;
 }
+
+ul {
+	list-style-type: none;
+}
+
 
 button {
 	border: solid 2px;
@@ -42,8 +51,28 @@ button:hover {
 header {
 	display: block;
 	overflow: hidden;
+	background: #fff;
 }
 
+footer {
+	background: darkblue;
+	height: 150px;
+	text-align: center;
+	color: white;
+	padding: 40px;
+}
+
+.content {
+	background: #fff;
+}
+.row {
+	padding: 40px 100px 60px 100px;
+	text-align: center;
+}
+
+#logo {
+	text-align: center;
+}
 .page-header {
 	border: none;
 	color: #fff;
@@ -55,15 +84,20 @@ header {
 
 .picture {
 	display: block;
-	background: #e9e9e7;
+	background: darkblue;
 }
 
 
 .picture img {
-	width: 40%;
+	min-width: 200px;
 	max-height: 400px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.col-md-8{
+	width: 100%;
+	float: none;
 }
 

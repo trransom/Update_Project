@@ -13,7 +13,7 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'menu_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-            <h1>{% block title %}<a href="/"><img src="/static/images/logo.png">{% endblock %}</a></h1>
+            <div id="logo">{% block title %}<a href="/"><img src="/static/images/logo.png">{% endblock %}</a></div>
         </div>
 	</header>
 	<section>
@@ -24,6 +24,7 @@
 	<section>
 	</section>
 	<footer>
+		<p>Copyright © 2018 Soda Fountain, Inc.</p> 
 	</footer>
     </body>
 </html>
