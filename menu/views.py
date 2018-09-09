@@ -8,11 +8,10 @@ from .models import *
 from .forms import *
 
 def menu_list(request):
-    all_menus = Menu.objects.all().distinct()[:10]
+    all_menus = Menu.objects.all().distinct()[:5]
     menus = []
     for menu in all_menus:
         if menu.expiration_date != None:
-#            if menu.expiration_date >= timezone.now():
                 menus.append(menu)
     menus = sorted(menus, key=attrgetter('expiration_date'))
     return render(request, 'menu/list_all_current_menus.html', {'menus': menus})
@@ -46,7 +45,7 @@ def edit_menu(request, pk):
     if request.method == "POST":
         menu.season = request.POST.get('season', '')
         menu.expiration_date = datetime.strptime(request.POST.get('expiration_date', ''), '%m/%d/%Y')
-#        menu.items = request.POST.get('items', '')
+        menu.items = request.POST.get('items', '')
         menu.save()
     return render(request, 'menu/change_menu.html', {
         'menu': menu,
